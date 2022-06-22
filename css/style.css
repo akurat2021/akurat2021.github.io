@@ -95,6 +95,10 @@ blockquote {
   font-family: 'Playfair Display', serif;
 }
 
+.font-madi {
+  font-family: 'Ms Madi', cursive;
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: none;
