@@ -30,8 +30,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("time").innerHTML = days + " Hari " + hours + " Jam "
-  + minutes + " Menit " + seconds + " Detik ";
+  document.getElementById("time").innerHTML = days + " Days " + hours + " Hours "
+  + minutes + " Minutes " + seconds + " Second ";
     
   // If the count down is over, write some text 
   if (distance < 0) {
@@ -45,7 +45,36 @@ var x = setInterval(function() {
   var paramValue = url.searchParams.get("name");
   if (paramValue == null) {
     document.getElementById("name").innerHTML = "Save our date";
+    document.getElementById("nameBanner").innerHTML = "We invite you to celebrate our wedding";
   } else {
-    // document.getElementById("name").innerHTML = "Hi " + paramValue + "<br> We invite you to celebrate our wedding";
-    document.getElementById("name").innerHTML = "Hi " + paramValue + ", please save our date";
+    document.getElementById("name").innerHTML = "Hi " + paramValue + ", please save our date ";
+    document.getElementById("nameBanner").innerHTML = "Hi " + paramValue + ", we invite you to celebrate our wedding";
   }
+
+
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+  
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        // width: '100%',
+        videoId: 'uRV6SUw8QRA',
+        playerVars: { 'controls': 0, 'autoplay': 1, 'playsinline': 1, 'loop': 1, 'modestbranding': 1, 'playlist': 'uRV6SUw8QRA'},
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+  
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.mute();
+      event.target.playVideo();
+    }
