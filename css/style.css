@@ -177,3 +177,11 @@ footer.page-footer {
   opacity: 0.2;
   position: absolute;
 }
+
+.musik {
+  position: fixed;
+  right: 15px;
+  bottom: 100px;
+  z-index: 99999;
+  transition: 0.5s;
+}
