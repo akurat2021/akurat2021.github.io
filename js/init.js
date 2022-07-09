@@ -10,7 +10,7 @@
 
 
     var sound = new Howl({
-      src: ['file.mp3'],
+      src: ['music.mp3'],
     });
 
     var play_button = $('#musik');
@@ -69,10 +69,10 @@ var url_string = window.location.href; // www.test.com?name=test
 var url = new URL(url_string);
 var paramValue = url.searchParams.get("name");
 if (paramValue == null) {
-  document.getElementById("name").innerHTML = "Save our date";
+  document.getElementById("name").innerHTML = "Our wedding day in";
   document.getElementById("nameBanner").innerHTML = "We invite you to celebrate our wedding";
 } else {
-  document.getElementById("name").innerHTML = "Hi " + paramValue + ", please save our date ";
+  document.getElementById("name").innerHTML = "Hi " + paramValue + ", please come to our wedding day in ";
   document.getElementById("nameBanner").innerHTML = "Hi " + paramValue + ", we invite you to celebrate our wedding";
 }
 
